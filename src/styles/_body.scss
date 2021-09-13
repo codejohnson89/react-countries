@@ -5,3 +5,19 @@ body {
     font-weight: 600;
     line-height: 16px;
 }
+
+.container.light {
+    background-color: $veryLightGray;
+}
+
+.row.countryRow {
+    max-width: 1280px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 37.5px;
+
+    @media only screen and (max-width: 768px) {
+        justify-content: center;
+    }
+}
