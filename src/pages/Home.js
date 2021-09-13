@@ -1,9 +1,8 @@
 import React, {useState, useEffect} from 'react';
-import { useSelector } from 'react-redux';
 import axios from 'axios';
 import { Col, Container, Row } from 'react-bootstrap';
-import LazyLoading from 'react-list-lazy-load';
-import { updateText } from '../redux/searchTerm';
+// import LazyLoading from 'react-list-lazy-load';
+// import { updateText } from '../redux/searchTerm';
 
 
 import SearchBar from '../components/SearchBar';
@@ -14,13 +13,13 @@ const baseURL = 'https://restcountries.eu/rest/v2/all';
 
 const Home = () => {
     const [ countries, setCountries ] = useState(null);
-    const query = useSelector((state) => state.searchTerm.value);
+    // const query = useSelector((state) => state.searchTerm.value);
 
-    const filter = () => {
-        countries.filter((country) => {
-            setCountries(country.region.toLowerCase() === query)
-        })
-    }
+    // const filter = () => {
+    //     countries.filter((country) => {
+    //         setCountries(country.region.toLowerCase() === query)
+    //     })
+    // }
 
     useEffect(() => {
         axios.get(baseURL).then((res) => {
@@ -28,9 +27,6 @@ const Home = () => {
         })
     }, []);
 
-    useEffect(() => {
-        console.log('updated')
-    }, [SearchBar])
 
     // console.log(countries.filter(country => country.region.toLowerCase() === 'africa'))
 

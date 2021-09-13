@@ -6,9 +6,7 @@ import {Link} from 'react-router-dom';
 const CardComponent = (props) => {
     const { title, image, population, region, capital } = props;
 
-    const Number =() => {
 
-    }
 
 
     return (
